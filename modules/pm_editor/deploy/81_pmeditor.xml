@@ -1,0 +1,15 @@
+<presentation-manager-editor class="org.jpos.ee.pm.struts.PMStrutsService"  logger="Q2">
+    <property name="debug" value="true" /> 
+    <property name="login-required" value="false" />
+    <property name="title" value="pm.editor.title" />
+    <property name="subtitle" value="pm.editor.subtitle" />
+    <property name="default-data-access" value="org.jpos.ee.pm.core.DataAccessVoid"/>
+    <property name="persistence-manager" value="org.jpos.ee.pm.core.PersistenceManagerVoid" />
+    
+    <property name="template" value="default" />
+    <property name="appversion" value="0.9" />
+    
+    <property name="entity" value="cfg/entities/pm.entity.xml" />
+    <property name="entity" value="cfg/entities/pm.field.xml" />
+    <property name="entity" value="cfg/entities/pm.operation.xml" />
+</presentation-manager-editor>

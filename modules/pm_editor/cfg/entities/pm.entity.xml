@@ -1,0 +1,67 @@
+<?xml version='1.0' ?>
+<!DOCTYPE entity SYSTEM "cfg/entity.dtd">  
+<entity id="pm.entity" clazz="org.jpos.ee.pm.core.Entity">
+  	<auditable>false</auditable>
+  	<dataAccess class="org.jpos.ee.pm.editor.DataAccessEntity" />
+
+  	<operations>
+  		<operation id="show" scope="item"    visibleIn="list edit" />
+  		<operation id="list" scope="item"    visibleIn="all" />
+        <operation id="add"  scope="general" visibleIn="list show" >
+            <context class="org.jpos.ee.pm.editor.context.PMEditorAddContext" />
+        </operation>
+        <operation id="edit" scope="item" visibleIn="list show" />
+        <operation id="delete" scope="item" visibleIn="list show">
+            <confirm>true</confirm>
+        </operation>
+  	</operations>
+
+  	<field id="id">
+        <converters>
+            <converter class="org.jpos.ee.pm.struts.converter.EditStringConverter" operations="add edit" />
+        </converters>
+  	</field>
+  	<field id="clazz">
+        <converters>
+            <converter class="org.jpos.ee.pm.struts.converter.EditStringConverter" operations="add edit" />
+        </converters>
+  	</field>
+  	<field id="order">
+  	    <converters>
+            <converter class="org.jpos.ee.pm.struts.converter.EditStringConverter" operations="add edit" />
+        </converters>
+  	</field>
+   	<field id="extendz">
+        <converters>
+            <converter class="org.jpos.ee.pm.struts.converter.EditStringConverter" operations="add edit" />
+        </converters>
+   	</field>
+   	<field id="operations.operations" display="show add edit" >
+        <converters>
+	        <converter class="org.jpos.ee.pm.struts.converter.EditCompositionConverter" operations="add edit">
+	            <properties>
+	                <property name="weak-entity" value="pm.operation" />
+	            </properties>
+	        </converter>
+	        <converter class="org.jpos.ee.pm.converter.ShowCompositionConverter" operations="list show">
+	            <properties>
+	                <property name="weak-entity" value="pm.operation" />
+	            </properties>
+	        </converter>
+	    </converters>
+  	</field>    
+    <field id="fields" display="show add edit" >
+        <converters>
+	        <converter class="org.jpos.ee.pm.struts.converter.EditCompositionConverter" operations="add edit">
+	            <properties>
+	                <property name="weak-entity" value="pm.field" />
+	            </properties>
+	        </converter>
+	        <converter class="org.jpos.ee.pm.converter.ShowCompositionConverter" operations="list show">
+	            <properties>
+	                <property name="weak-entity" value="pm.field" />
+	            </properties>
+	        </converter>
+	   </converters>
+    </field>
+ </entity>

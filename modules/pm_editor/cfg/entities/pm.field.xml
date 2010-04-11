@@ -1,0 +1,54 @@
+<?xml version='1.0' ?>
+<!DOCTYPE entity SYSTEM "cfg/entity.dtd">  
+<entity id="pm.field" clazz="org.jpos.ee.pm.core.Field">
+  	<auditable>false</auditable>
+  	<owner>
+      <entityId>pm.entity</entityId>
+      <entityProperty>fields</entityProperty>
+      <entityCollectionClass>java.util.ArrayList</entityCollectionClass>
+    </owner>
+
+	<operations>
+  		<operation id="list"   scope="item"    visibleIn="all">
+  		    <properties>
+                <property name="searchable" value="false"/>
+                <property name="paginable" value="false"/>
+            </properties>
+  		</operation>
+  		<operation id="show"   scope="item"    visibleIn="list edit" />
+  		<operation id="add"    scope="general" visibleIn="list show edit" />
+  		<operation id="edit"   scope="item"    visibleIn="list show" />
+  		<operation id="delete" scope="item"    visibleIn="list edit show">
+            <confirm>true</confirm>
+        </operation>
+    </operations>
+	
+  	<field id="id">
+        <converters>
+            <converter class="org.jpos.ee.pm.struts.converter.EditStringConverter" operations="add edit" />
+        </converters>
+  	</field>
+    <field id="display">
+        <converters>
+            <converter class="org.jpos.ee.pm.struts.converter.EditStringConverter" operations="add edit" />
+        </converters>
+    </field>
+    <field id="align" display="show add edit">
+        <converters>
+            <converter class="org.jpos.ee.pm.struts.converter.EditStringConverter" operations="add edit" />
+        </converters>
+    </field>
+    <field id="width" display="show add edit">
+        <converters>
+            <converter class="org.jpos.ee.pm.struts.converter.EditStringConverter" operations="add edit" />
+        </converters>
+    </field>
+    <field id="defaultValue" display="show add edit">
+        <converters>
+            <converter class="org.jpos.ee.pm.struts.converter.EditStringConverter" operations="add edit" />
+        </converters>
+    </field>
+    <field id="validators" display="show add edit"/>
+    <field id="converters" display="show add edit"/>
+
+ </entity>

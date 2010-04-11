@@ -1,0 +1,33 @@
+<?xml version='1.0' ?>
+<operations>
+  		<operation>
+  			<id>list</id>
+  			<enabled>true</enabled>
+  			<scope>item</scope>
+  			<visibleIn>all</visibleIn>
+  		</operation>
+  		<operation>
+  			<id>show</id>
+  			<enabled>true</enabled>
+  			<scope>item</scope>
+  			<visibleIn>list edit</visibleIn>
+  		</operation>
+  		<operation>
+  			<id>add</id>
+  			<enabled>true</enabled>
+  			<scope>general</scope>
+  			<visibleIn>list show edit</visibleIn>
+  		</operation>
+  		<operation>
+  			<id>edit</id>
+  			<enabled>true</enabled>
+  			<scope>item</scope>
+  			<visibleIn>list show</visibleIn>
+  		</operation>
+  		<operation>
+  			<id>delete</id>
+  			<enabled>true</enabled>
+  			<scope>item</scope>
+  			<visibleIn>list edit show</visibleIn>
+  		</operation>
+</operations>

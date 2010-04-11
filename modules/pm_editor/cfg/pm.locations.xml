@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE menu SYSTEM "locations.dtd">
+<locations>
+       <location id="pmstruts" class="org.jpos.ee.pm.struts.MenuItemLocationStruts"/>
+</locations>

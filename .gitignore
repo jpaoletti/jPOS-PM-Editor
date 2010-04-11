@@ -1,0 +1,14 @@
+*~
+.*
+!.gitignore
+build.*
+!modules/build.*
+bin
+modules/constants
+modules/jetty6
+modules/jpos
+modules/pm_core
+modules/pm_security_core
+modules/pm_struts
+build/
+dist/

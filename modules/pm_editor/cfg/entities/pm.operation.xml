@@ -1,0 +1,58 @@
+<?xml version='1.0' ?>
+<!DOCTYPE entity SYSTEM "cfg/entity.dtd">
+<entity id="pm.operation" clazz="org.jpos.ee.pm.core.Operation" >
+  	<auditable>false</auditable>
+  	<owner>
+      <entityId>pm.entity</entityId>
+      <entityProperty>operations.operations</entityProperty>
+      <entityCollectionClass>java.util.ArrayList</entityCollectionClass>
+    </owner>
+    
+    <highlights>
+        <highlight field="enabled" value="false" color="red" scope="all" />
+        <highlight field="enabled" value="true" color="green" scope="all" />
+    </highlights>
+  	
+	<operations>
+  		<operation id="list">
+            <properties>
+                <property name="searchable" value="false"/>
+                <property name="paginable" value="false"/>
+            </properties>
+        </operation>
+  		<operation id="show"   scope="item"    visibleIn="list" />
+  		<operation id="add"    scope="general" visibleIn="list show edit" />
+  		<operation id="edit"   scope="item"    visibleIn="list show" />
+  		<operation id="delete" scope="item"    visibleIn="list edit show" >
+            <confirm>true</confirm>
+        </operation>
+	</operations>
+
+  	<field id="id">
+        <converters>
+            <converter class="org.jpos.ee.pm.struts.converter.EditStringConverter" operations="add edit" />
+        </converters>
+    </field>
+  	<field id="enabled" width="50" >
+        <converters>
+              <converter class="org.jpos.ee.pm.converter.ShowBooleanConverter" operations="list show">
+                   <properties>
+                       <property name="true-text" value="Yes" />
+                       <property name="false-text" value="No" />
+                   </properties>
+              </converter>
+              <converter class="org.jpos.ee.pm.struts.converter.EditBooleanConverter" operations="add edit" />
+          </converters>
+    </field>
+  	<field id="scope" display="show add edit">
+  	    <converters>
+      		<converter class="org.jpos.ee.pm.editor.converter.ScopeConverter" operations="add edit" />
+  		</converters>
+  	</field>
+  	<field id="visibleIn" width="50">
+        <converters>
+            <converter class="org.jpos.ee.pm.struts.converter.EditStringConverter" operations="add edit" />
+        </converters>
+    </field>
+ </entity>
+ 

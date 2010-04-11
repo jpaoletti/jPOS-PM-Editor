@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE menu SYSTEM "menu.dtd">
+<menu>
+	<menu-item text="pm.menu.list.entities" perm="">
+        <location id="pmstruts" value="/list.do?pmid=pm.entity" />
+		<external>false</external>
+	</menu-item>
+</menu>
